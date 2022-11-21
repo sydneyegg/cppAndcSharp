@@ -2,11 +2,23 @@
 //
 
 #include <iostream>
+#include <ctime>  /* Noncompliant */
 
 int main()
 {
     std::cout << "Hello World!\n";
 }
+
+void f()
+{
+    clock();
+    signed char a = 'a'; // Noncompliant, explicitly signed
+    unsigned char b = '\r'; // Noncompliant, explicitly unsigned
+    char c = 10; // Noncompliant
+    unsigned char d = c; // Noncompliant, d is explicitly signed while c is not
+    char e = a; // Noncompliant, a is explicitly signed while e is not
+}
+
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
 // Debug program: F5 or Debug > Start Debugging menu
