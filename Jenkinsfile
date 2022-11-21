@@ -33,7 +33,7 @@ pipeline {
                     def scannerHome = tool 'SonarScanner for MSBuild'; // Name of the SonarQube Scanner you created in "Global Tool Configuration" section
                     withSonarQubeEnv('ee97win') {
                         bat "dotnet ${scannerHome}\\SonarScanner.MSBuild.dll begin /k:\"joe-tingsanchali-sonarsource_cplusplusandcsharp_AYSBjwhhn_7q9zqA8JuZ\" /d:\"sonar.cfamily.build-wrapper-output=wrapper-output\""
-                        powershell "build-wrapper-win-x86-64.exe --out-dir wrapper-output  MSBuild.exe .CPlusPlusAndCSharp.sln /t:Rebuild /nodeReuse:False"
+                        powershell "build-wrapper-win-x86-64.exe --out-dir wrapper-output  MSBuild.exe CPlusPlusAndCSharp.sln /t:Rebuild /nodeReuse:False"
                         bat "dotnet ${scannerHome}\\SonarScanner.MSBuild.dll end"
                     }
                 }
