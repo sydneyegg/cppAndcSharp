@@ -23,3 +23,4 @@ From the SonarQube [C-Family](https://docs.sonarqube.org/latest/analysis/languag
 > build-wrapper-win-x86-64.exe --out-dir build_wrapper_output_directory MSBuild.exe /t:Rebuild /nodeReuse:False
 > SonarScanner.MSBuild.exe end
 > ```
+# cppAndcSharp
