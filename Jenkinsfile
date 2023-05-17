@@ -19,7 +19,7 @@ pipeline {
                   $path = ".sonar/build-wrapper-win-x86.zip"
                   New-Item -ItemType directory -Path .sonar -Force
                   [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-                  (New-Object System.Net.WebClient).DownloadFile("https://jenke78.ngrok.io/static/cpp/build-wrapper-win-x86.zip", $path)
+                  (New-Object System.Net.WebClient).DownloadFile("https://ke100.ngrok.io/static/cpp/build-wrapper-win-x86.zip", $path)
                   Add-Type -AssemblyName System.IO.Compression.FileSystem
                   [System.IO.Compression.ZipFile]::ExtractToDirectory($path, ".sonar")
                   $env:Path += ";.sonar/build-wrapper-win-x86"
